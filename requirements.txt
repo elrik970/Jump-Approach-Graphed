@@ -1,0 +1,1 @@
+ultralytics, scipy, cv2, pandas

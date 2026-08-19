@@ -1,0 +1,15 @@
+# Ignore model weights
+*.pt
+*.onnx
+*.weights
+
+# Ignore raw/processed video folders and outputs
+JumpVideos/
+SavedJumpVideos/
+CorrectOutput/
+
+# Ignore IDE settings
+.vscode/
+
+# Ignore python Cache
+__pycache__/

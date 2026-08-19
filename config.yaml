@@ -1,0 +1,46 @@
+paths:
+  videos: JumpVideos
+  output: SavedJumpVideos
+  bounding_box_model: models/yolo26x.pt
+  model: models/yolo26x-pose.pt
+  tracker: models/customBotSort.yaml
+  correct_output: CorrectOutput
+
+tracking:
+  conf_track: 0.25          # Lowered detection floor to catch rapid motion blur
+  iou_track: 0.45           # Increased NMS overlap to prevent duplicate box drops
+  imgsz_track: 1920
+
+  conf_pose: 0.05  
+  iou_pose: 0.70           # Increased NMS overlap to prevent duplicate box drops
+  imgsz_pose: 1920
+
+  minimum_confidence_threshold: 0.7
+  padding_fraction: 0.1
+
+  cropped_model_conf: 0.25
+  cropped_model_iou: 0.7      # less relevant for single person but fine to keep
+  cropped_model_imgsz: 1280     # crop is already small, no need for 1920
+  cropped_model_device: 'cuda:0'
+  cropped_model_half: True
+  cropped_model_verbose: False
+  cropped_model_augment: False
+
+athlete:
+  minimum_direction_score: 0.05
+  knee_peaks_prominence: 0.45
+  AnkleCorrelationWindowSize: 1 # Expressed as a fraction of FPS
+  # correlation_threshold_for_sprinting: -0.55 # Minimum interankle correlation value that represents when the athlete is sprnting
+  correlation_threshold_for_start: -0.15
+  correlation_threshold_for_end: -0.15
+  corr_rolling_average_scalar: 1
+
+detection:
+  minimum_movement_threshold: 0.1 # Expressed as a ratio of bounding box height
+  leg_extension_peak_prominence: 0.6
+  leg_extension_peak_height: 0.05
+  leg_extension_min_gap: 0.4 # Expressed as a fraction of FPS
+  leg_extension_max_gap: 0.9 # Expressed as a fraction of FPS
+  possible_initial_contact_frames_before_leg_extension: 0.1 # NOT expressed as a fraction of FPS, currently set to two because running .diff().diff() means the first 2 values are NaN
+  possible_initial_contact_frames_after_leg_extension: 0.2 # Expressed as a fraction of FPS 
+  consecutive_extension_peak: 3 # Minimum Number of maximum extension peaks before being marked as the sprint peaks
