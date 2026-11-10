@@ -5,6 +5,8 @@ Achieved ±2 frames detection of ground contact across 12 videos on 30FPS 90 deg
 
 <img width="2036" height="1139" alt="image" src="https://github.com/user-attachments/assets/c1647021-fa8e-4ac0-8af7-ed131ca47fa5" />
 
+<img width="1624" height="1104" alt="image" src="https://github.com/user-attachments/assets/cd3a51b6-638e-43d6-8031-ddea53f724f6" />
+
 Red Bounding Box = Detected Athlete, as shown below
 
 <img width="1534" height="1029" alt="image" src="https://github.com/user-attachments/assets/8733f346-7b2e-4272-b00d-5030750cbd89" />
