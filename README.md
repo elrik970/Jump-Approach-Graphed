@@ -1,6 +1,17 @@
 # Jump-Approach-Graphed
 Automating graphing and understanding the approach of a long jump / triple jump using Computer Vision and Biomechanics 
 
+## Features
+- **Bounding Box Normalization:** Normalizes ankle-to-hip coordinate vectors to account for camera angle and zoom.
+- **Step Preperation Identification:** Identifies the moment where the athlete is most extended in preperation to make a ground contact
+- **Velocity & Deceleration Detection:** Identifies stride frequency and frame-by-frame deceleration spikes to identify moment of contact.
+- **Automated Plot Generation:** Exports kinematic data directly to structured NumPy/Pandas dataframes and matplotlib visuals.
+
+## Tech Stack
+- **Language:** Python 3.10+
+- **Computer Vision:** OpenCV, YOLOv8
+- **Data Analysis:** NumPy, Pandas, Matplotlib
+
 Achieved ±2 frames detection of ground contact across 12 videos on 30FPS 90 degrees monocular footage
 
 <img width="2036" height="1139" alt="image" src="https://github.com/user-attachments/assets/c1647021-fa8e-4ac0-8af7-ed131ca47fa5" />
